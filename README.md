@@ -1,3 +1,43 @@
+# Strapi Headless CMS for a personal blog and other stuff 
+
+## Deployment Info
+
+Connect to VPS via SSH
+- User: strapi-controller
+- PW: aBN1fzEutA
+
+Make shure that the ufw firewall settings are correct and the strapi port is open:
+
+```sh
+sudo apt install ufw -y
+sudo ufw allow 1337
+sudo ufw allow 3307
+sudo ufw allow 'Nginx Full'
+sudo ufw enable 
+sudo ufw status
+```
+
+Now make shure that the mysql 5.7 container is running:
+
+```sh
+sudo docker ps -a
+sudo docker start legacy_mysql
+```
+
+If the Firewall is not allowing traffic to the docker container, validate the **/etc/default/docker** file:
+If it is not there, add the following line to the mentioned file and restart docker.
+
+```sh
+DOCKER_OPTS="--iptables=false"
+sudo systemctl restart docker
+```
+
+
+
+This [guide](https://www.ravsam.in/blog/deploy-strapi-on-vps-with-ubuntu-mysql/) was used to first install strapi alongside containered mysql on VPS#
+
+<br><br><br>
+
 # 🚀 Getting started with Strapi
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
@@ -55,3 +95,6 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 ---
 
 <sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+
+---
+
