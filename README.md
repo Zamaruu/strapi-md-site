@@ -1,10 +1,14 @@
 # Strapi Headless CMS for a personal blog and other stuff 
 
+
+If any changes are to be made to the admin panel or the api itself, develop and test the changes locally and when ready deploy to the live environment.
+
 ## Deployment Info
 
 Connect to VPS via SSH
 - User: strapi-controller
 - PW: aBN1fzEutA
+
 
 Make shure that the ufw firewall settings are correct and the strapi port is open:
 
@@ -32,11 +36,32 @@ DOCKER_OPTS="--iptables=false"
 sudo systemctl restart docker
 ```
 
+To start or stop the strapi application the server utilizes [pm2](https://pm2.keymetrics.io/docs/usage/process-management/). To launch or stop strapi use one of the following commands.
 
+```sh
+pm2 status
+
+pm2 start strapi-md-site
+pm2 stop strapi-md-site
+```
+
+
+---
+
+### Pull changes from github
+
+Go to folder **~/strapi-md-site**.
+Into this folder you will want to pull your approved changes. But befor you merge dont forget to stop the pm2 process, and start it again after the merge. Pull with following command: 
+
+```sh
+git pull
+```
+
+---
 
 This [guide](https://www.ravsam.in/blog/deploy-strapi-on-vps-with-ubuntu-mysql/) was used to first install strapi alongside containered mysql on VPS#
 
-<br><br><br>
+<br>
 
 # 🚀 Getting started with Strapi
 
