@@ -1,6 +1,10 @@
 # Strapi Headless CMS for a personal blog and other stuff 
 
 
+The live admin environment can be found [here](https://strapi.maximilian-ditz.de/admin). 
+A sample api call would be: **https://strapi.maximilian-ditz.de/api/blogs**.
+As of now (25.08.2022), an API Key is needed to fetch Data from the endpoints.
+
 If any changes are to be made to the admin panel or the api itself, develop and test the changes locally and when ready deploy to the live environment.
 
 ## Deployment Info
