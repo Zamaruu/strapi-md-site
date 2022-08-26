@@ -1,5 +1,5 @@
 {
-  "/blogs": {
+  "/blog-posts": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/BlogListResponse"
+                "$ref": "#/components/schemas/BlogPostListResponse"
               }
             }
           }
@@ -64,7 +64,7 @@
         }
       },
       "tags": [
-        "Blog"
+        "Blog-post"
       ],
       "parameters": [
         {
@@ -148,7 +148,7 @@
           }
         }
       ],
-      "operationId": "get/blogs"
+      "operationId": "get/blog-posts"
     },
     "post": {
       "responses": {
@@ -157,7 +157,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/BlogResponse"
+                "$ref": "#/components/schemas/BlogPostResponse"
               }
             }
           }
@@ -214,23 +214,23 @@
         }
       },
       "tags": [
-        "Blog"
+        "Blog-post"
       ],
       "parameters": [],
-      "operationId": "post/blogs",
+      "operationId": "post/blog-posts",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/BlogRequest"
+              "$ref": "#/components/schemas/BlogPostRequest"
             }
           }
         }
       }
     }
   },
-  "/blogs/{id}": {
+  "/blog-posts/{id}": {
     "get": {
       "responses": {
         "200": {
@@ -238,7 +238,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/BlogResponse"
+                "$ref": "#/components/schemas/BlogPostResponse"
               }
             }
           }
@@ -295,7 +295,7 @@
         }
       },
       "tags": [
-        "Blog"
+        "Blog-post"
       ],
       "parameters": [
         {
@@ -309,7 +309,7 @@
           }
         }
       ],
-      "operationId": "get/blogs/{id}"
+      "operationId": "get/blog-posts/{id}"
     },
     "put": {
       "responses": {
@@ -318,7 +318,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/BlogResponse"
+                "$ref": "#/components/schemas/BlogPostResponse"
               }
             }
           }
@@ -375,7 +375,7 @@
         }
       },
       "tags": [
-        "Blog"
+        "Blog-post"
       ],
       "parameters": [
         {
@@ -389,13 +389,13 @@
           }
         }
       ],
-      "operationId": "put/blogs/{id}",
+      "operationId": "put/blog-posts/{id}",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/BlogRequest"
+              "$ref": "#/components/schemas/BlogPostRequest"
             }
           }
         }
@@ -466,7 +466,7 @@
         }
       },
       "tags": [
-        "Blog"
+        "Blog-post"
       ],
       "parameters": [
         {
@@ -480,7 +480,7 @@
           }
         }
       ],
-      "operationId": "delete/blogs/{id}"
+      "operationId": "delete/blog-posts/{id}"
     }
   }
 }
